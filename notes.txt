@@ -3,3 +3,5 @@ https://github.com/dsblank/activitypub
 https://github.com/jointakahe/takahe
 
 https://activitypub.mushroomlabs.com/
+
+https://www.theverge.com/2019/1/24/18129437/front-porch-forum-vermont-social-network-listserv-local-online-community
