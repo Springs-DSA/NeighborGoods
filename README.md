@@ -1,5 +1,5 @@
 # NeighborGoods
-Federated Library of Things
+Federated Library of Things, forked from the excellent [Epicyon](https://gitlab.com/bashrc2/epicyon/-/tree/main?ref_type=heads).
 
 This is a design document for how the Neighborhood servers should be set up in the abstract.
 
