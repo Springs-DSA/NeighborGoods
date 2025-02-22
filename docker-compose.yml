@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  neighborgoods:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # Using 8081 instead of 80 to avoid requiring root privileges
+      - "8081:80"
+      - "7156:7156"
+    volumes:
+      # Mount the source code for development
+      - .:/app
+      # Mount a persistent data volume
+      - neighborgoods_data:/app/data
+    environment:
+      - DOMAIN=localhost:8081
+      # Add development-specific environment variables
+      - PYTHONUNBUFFERED=1
+    # Override the CMD to enable auto-reloading for development
+    command: >
+      /usr/bin/python3 -u
+      /app/epicyon.py
+      --port 80
+      --proxy 7156
+      --registration open
+      --domain localhost:8081
+      --path /app
+    restart: unless-stopped
+
+volumes:
+  neighborgoods_data:
